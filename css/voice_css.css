@@ -1,32 +1,66 @@
-/* Style the navbar */
-#navbar {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  /* Navbar links */
-  #navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
-  
-  /* Page content */
-  .content {
-    padding: 16px;
-  }
-  
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
-  }
+.flex-container{
+  display: inline-flex;
+}
+.flex-container{
+  flex-direction: row;
+}
+h1{
+  color:white;
+  padding:10px;
+
+}
+.item{
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  color: cornflowerblue;
+  font-size: medium;
+
+}
+.taiwan_title{
+  font-size:40px;
+  color: white;
+  padding:5px;
+  margin-left: 150px;
+}
+.about_us{
+  position: absolute;
+  top: 0px;
+  right: 5px;
+}
+.logo{
+  color: aquamarine;
+  animation-name: logo;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.test{
+  background-color: yellow;
+}
+#MainShow {
+	margin:20px;
+	padding:15px 0px;
+	background-color:yellow;
+	border:1px #ccc solid;
+	width:800px;
+	float:left;
+}
+#Working_box{
+  background-color: blue;
+  margin: 20px;
+  padding: 15px;
+  width:850px;
+  float:right;
+}
+main{
+  display:flex;
+  background-color: red;
+}
+main>.left{
+  width:900px;
+  background-color: aqua;
+  margin:10px 0 0 5px;
+}
+main>.right{
+
+}
