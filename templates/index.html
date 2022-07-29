@@ -25,12 +25,57 @@
         <h1>台聲語音-臺灣之聲</h1>
         </div>
       </nav>
+      
     <!-- end of NavBarSetting -->
     <!-- the main-function section -->
-      <main>
-        <div class = "left">a</div>
-        <div class = "right">a</div>
-      </main>
+    <div class="d-flex flex-row bd-highlight mb-3">
+      <div class="container-xl bd-highlight ">
+        <div style = "height:400px"class = "p-2 ">
+          <div style=" background-color: #ffffff55; border-radius: 1.5vw; font-size:20px; font-weight:bold;">
+            <b>請選擇要辨識的模型</b>
+            <select id="model_name">
+              <option>hk_100</option>
+              <option>MTK_new</option>
+              <option>MTK2der</option>
+              <option>CDOCWAM1</option>
+              <option>CTmix</option>
+              <option>en_ori</option>
+              <option>en_test1</option>
+              <option>en_test</option>
+              <option>Minnan</option>
+              <option>Minnan1</option>
+              <option>Tai_aux</option>
+              <option>tai_tone</option>
+              <option>dnn_S06</option>
+              <option>CHai0719</option>
+              <option>Mandsi0</option>
+              <option>ChSiEdul</option>
+              <option>id_dm1</option>
+              <option>id_dm2</option>
+              <option>idn</option>
+              <option>idn_lm</option>
+              <option>idn_exlm</option>
+              <option>hk_demo</option>
+              <option>MTK_ch</option>
+              <option>allNames</option>
+              <option>Ch_names</option>
+              <option>EVAL006</option>
+              <option>DcwTai1</option>
+              <option>idn_exlm</option>
+              <option>derder</option>
+              <option>henry</option>
+              <option>machine_</option>
+              <option>machine2</option>
+              <option>mchlm2</option>
+            </select>
+            </div>
+        </div>
+        <div style = "height:350px"class = "p-2 outline border-top"></div>
+      </div>
+<!-- outputSentence 是用來丟出結果的 -->
+      <!-- <div readonly="readonly" style="font-size:28px; height:800px" id="outputSentence" class="form-control">辨識結果</div> -->
+      <textarea readonly = "readonly" style="height:750px;resize:none;font-size: 28px;" class = "form-control" id ="outputSentence" cols="num" rows="num">辨識結果</textarea>
+    </div>
    
 <!-- search for overflow -->
 
