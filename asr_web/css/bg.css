@@ -1,0 +1,12 @@
+.usr-1{
+
+}
+.usr-1 .main-bg {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: white;
+	opacity: 0.4;
+	width: 100% ;
+	height: 100% ;
+}

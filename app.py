@@ -8,6 +8,7 @@ class VueFlask(Flask):
 
 app = VueFlask(__name__)
 CORS(app,resources={r"/*":{"origins":"*"}})
+
 @app.route("/")
 def index():
     return render_template("index.html")
