@@ -19,9 +19,18 @@ function getModelName() {
     model = modelList.options[modelList.selectedIndex].text;
     console.log(model);
 }
-// here lies the holding button
+function hold_record(){
+  const record_button = document.getElementById('record')
+  if(record_button.id == 'record'){
+    record_button.id = 'stop';
+    startRecording();
+  }
+  else if(record_button.id == 'stop'){
+    record_button.id = 'record';
+    stopRecording();
+  }
+}
 
-/////
 function record_init() {
   
   recordButton = document.getElementById('record');
@@ -34,7 +43,7 @@ function record_init() {
     recordButton.disabled = false;
     recordButton.addEventListener('click', startRecording);
     stopButton.addEventListener('click', stopRecording);
-    recorder = new MediaRecorder(stream, {mimeType: '..staticvideo/webm;codecs=vp9'});
+    recorder = new MediaRecorder(stream, {mimeType: 'video/webm;codecs=vp9'});
    // recorder = new MediaRecorder(stream);
 	//console.dir(recorder.mimeType);
     // listen to dataavailable, which gets triggered whenever we have
@@ -75,9 +84,12 @@ function upload(blob) {
     console.log(array);
     var mystring=array.message.split("result",1)[0];
     console.log(mystring); 
-    document.getElementById("outputSentence").innerHTML="辨識結果:\n"+mystring.split("ori:",2)[1];
+    var res = mystring.split("ori:",2)[1];
 
-  }
+    document.getElementById("outputSentence").innerHTML="辨識結果:\n"+res.replaceAll(';','\n');
+
+
+  } 
   };
   //xhr.open("POST","https://cors-anywhere.herokuapp.com/https://www.taiwanspeech.ilovetogether.com/tws-cgi/post_server.py",true);
   xhr.open("POST","https://www.taiwanspeech.ilovetogether.com/tws-cgi/post_server.py",true);
@@ -90,38 +102,6 @@ function upload(blob) {
   xhr.send(formData)
   
 }
-////////////////////////////////////////////////////More JS
-var recorder = new MediaRecorder(stream, {
-  mimeType: 'video/webm'
-});
-
-function startRecording(stream, lengthInMS) {
-  let recorder = new MediaRecorder(stream);
-  let data = [];
-
-  recorder.ondataavailable = (event) => data.push(event.data);
-  recorder.start();
-  log(`${recorder.state} for ${lengthInMS / 1000} seconds…`);
-
-  let stopped = new Promise((resolve, reject) => {
-    recorder.onstop = resolve;
-    recorder.onerror = (event) => reject(event.name);
-  });
-
-  let recorded = wait(lengthInMS).then(
-    () => {
-      if (recorder.state === "recording") {
-        recorder.stop();
-      }
-    },
-  );
-
-  return Promise.all([
-    stopped,
-    recorded
-  ])
-  .then(() => data);
-}
-function stop(stream) {
-  stream.getTracks().forEach((track) => track.stop());
+function str_handle(mystring){
+  
 }

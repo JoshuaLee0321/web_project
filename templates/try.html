@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/bg.css">
+    <title>Taiwan Speech</title>
+    <!-- Custom styles for this template -->
+    <link href="./css/product.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/record-live-audio.js"></script>
+  </head>
+  
+  <script type="text/javascript">
+    window.onload = function(){
+        record_init();
+    }
+  </script>
+
+
+  <body class="usr-1">
+
+	<form id="output-result" role="form">
+      <div class="form-group">
+        <textarea readonly="readonly" style="font-size:28px;" id="outputSentence" class="form-control" rows="3" name="sentence">辨識結果</textarea>
+      </div>
+    </form>
+
+
+
+	<select id="model_name">
+		<option>hk_100</option>
+		<option>MTK_new</option>
+		<option>MTK2der</option>
+		<option>CDOCWAM1</option>
+		<option>CTmix</option>
+		<option>en_ori</option>
+		<option>en_test1</option>
+		<option>en_test</option>
+		<option>Minnan</option>
+		<option>Minnan1</option>
+		<option>Tai_aux</option>
+		<option>tai_tone</option>
+		<option>dnn_S06</option>
+		<option>CHai0719</option>
+		<option>Mandsi0</option>
+		<option>ChSiEdul</option>
+		<option>id_dm1</option>
+		<option>id_dm2</option>
+		<option>idn</option>
+		<option>idn_lm</option>
+		<option>idn_exlm</option>
+		<option>hk_demo</option>
+		<option>MTK_ch</option>
+		<option>allNames</option>
+		<option>Ch_names</option>
+		<option>EVAL006</option>
+		<option>DcwTai1</option>
+		<option>idn_exlm</option>
+		<option>derder</option>
+		<option>henry</option>
+		<option>machine_</option>
+		<option>machine2</option>
+		<option>mchlm2</option>
+	</select>
+
+
+        <button id="record"><img src="bg/play.png"></button>
+        <button id="stop"><img src="bg/stop.png"></button>
+
+        <p><audio id="audio" controls></audio></p>
+
+  </body>
+</html>
+
