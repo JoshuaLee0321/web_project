@@ -12,7 +12,6 @@
 
 var recordButton, stopButton, recorder;
 var model;
-
 function getModelName() {
 
     var modelList = document.getElementById('model_name');
@@ -102,6 +101,22 @@ function upload(blob) {
   xhr.send(formData)
   
 }
-function str_handle(mystring){
+function getJSON(){
+  const node = document.createElement("option");
   
+  var target = document.getElementById("model_name");
+
+  fetch("/model_name")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(document1){
+    for(i = 0;i<33;i++){
+      var logg = document.createElement("option");
+      logg.textContent = document1['selection'][i]['opt'];
+      target.appendChild(logg);
+      //到時這邊加入想要介紹的內容
+      
+      }
+  })
 }

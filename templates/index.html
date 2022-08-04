@@ -19,9 +19,9 @@
     <script type="text/javascript">
       window.onload =function(){
         record_init();
+        getJSON();
       }
     </script>
-    <script src = "../static/js/record_test.js"></script>
     <!-- js area -->
 </head>
 
@@ -42,46 +42,11 @@
     <div class="d-flex flex-row bd-highlight mb-3">
       <div class="container-xl bd-highlight ">
         <div style = "height:400px"class = "p-2 ">
-          <div style=" background-color: #ffffff55; border-radius: 1.5vw; font-size:20px; font-weight:bold;">
+          <div class = "container-xl"style=" background-color: #ffffff55; border-radius: 1.5vw; font-size:20px; font-weight:bold;">
             <div class = "p-md-5"><b>請選擇要辨識的模型</b>
-              <!-- json讀一下 -->
-            <select id="model_name">
-              <option>hk_100</option>
-              <option>MTK_new</option>
-              <option>MTK2der</option>
-              <option>CDOCWAM1</option>
-              <option>CTmix</option>
-              <option>en_ori</option>
-              <option>en_test1</option>
-              <option>en_test</option>
-              <option>Minnan</option>
-              <option>Minnan1</option>
-              <option>Tai_aux</option>
-              <option>tai_tone</option>
-              <option>dnn_S06</option>
-              <option>CHai0719</option>
-              <option>Mandsi0</option>
-              <option>ChSiEdul</option>
-              <option>id_dm1</option>
-              <option>id_dm2</option>
-              <option>idn</option>
-              <option>idn_lm</option>
-              <option>idn_exlm</option>
-              <option>hk_demo</option>
-              <option>MTK_ch</option>
-              <option>allNames</option>
-              <option>Ch_names</option>
-              <option>EVAL006</option>
-              <option>DcwTai1</option>
-              <option>idn_exlm</option>
-              <option>derder</option>
-              <option>henry</option>
-              <option>machine_</option>
-              <option>machine2</option>
-              <option>mchlm2</option>
-            </select>
+            <select class = "bg-white bg-gradient" style ="margin-left:10%;"id="model_name"></select>
           </div>
-
+          <textarea class ="container-xl" id="model_explain">模組介紹</textarea>
           <div>
           <!-- 介紹模型 -->
             
@@ -107,7 +72,7 @@
     <textarea id = "outputSentence" readonly = "readonly" style="height:80vh;resize:none;font-size: 28px;" class = " m-3 p-2 form-control" id ="outputSentence" cols="num" rows="num" name = "sentence">辨識結果</textarea>
     </div>
   </div>
-   
+
 <!-- search for overflow -->
 
 <!-- <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg> -->

@@ -87,3 +87,9 @@ ons-button:hover{
   background-color:#fff;
   border:10px #003C9D solid;
 }
+#model_explain{
+  resize: none;
+  height: 200px;
+  border: none;
+  text-align: justify;
+}
