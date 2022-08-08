@@ -74,22 +74,56 @@ main{
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-ons-button{
-  border:0;
-  background-color:#053177;
-  color:#fff;
-  border:10px #0d1829 solid;
-  border-radius:10px;
-  cursor:pointer;
-}
-ons-button:hover{
-  color:#4870b1;
-  background-color:#fff;
-  border:10px #003C9D solid;
-}
+
 #model_explain{
   resize: none;
   height: 200px;
   border: none;
   text-align: justify;
+}
+/* button area */
+[data-role = "controls"] > button{
+  margin:60px auto;
+  outline: none;
+  display:block;
+
+  border:none;
+  background-color: #09AFD9;
+  background-image:linear-gradient(0deg,#09AFD9 0%,#97D9E1 100%);
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  text-indent: -100cm;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 3) inset,
+    0px 0px 0px 30px #fff, 0px 0px 0px 35px #333;
+}
+[data-role = "controls"] >button:hover{
+  margin:50px auto;
+}
+[data-role = "clicking"] > button{
+  margin:60px auto;
+  outline: none;
+  display:block;
+
+  border:none;
+  background-color: #09AFD9;
+  background-image:linear-gradient(0deg,red 0%,#97D9E1 100%);
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  text-indent: -100cm;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 3) inset,
+    0px 0px 0px 30px #fff, 0px 0px 0px 35px #333;
+}
+[data-role = "clicking"] >button:hover{
+  margin:50px auto;
+}
+#download_btn{
+  margin-left:70px;
+  border:none;
+}
+#download_btn:hover{
+  background-color: #495057;
 }

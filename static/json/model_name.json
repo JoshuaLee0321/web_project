@@ -1,16 +1,16 @@
 {
     "selection":[
         {"opt":"hk_100",
-         "description":""
+         "description":"hk_100"
     },
         {"opt":"MTK_new",
-        "description":""
+        "description":"MTK_new"
     },
         {"opt":"MTK2der",
-        "description":""
+        "description":"MTK2der"
     },
         {"opt":"CDOCWAM1",
-        "description":""
+        "description":"CDOCWAM1"
     },
         {"opt":"CTmix",
         "description":""

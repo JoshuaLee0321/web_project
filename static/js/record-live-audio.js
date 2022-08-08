@@ -12,6 +12,8 @@
 
 var recordButton, stopButton, recorder;
 var model;
+
+
 function getModelName() {
 
     var modelList = document.getElementById('model_name');
@@ -19,17 +21,14 @@ function getModelName() {
     console.log(model);
 }
 function hold_record(){
-  const record_button = document.getElementById('record')
-  if(record_button.id == 'record'){
-    record_button.id = 'stop';
-    startRecording();
-  }
-  else if(record_button.id == 'stop'){
-    record_button.id = 'record';
-    stopRecording();
-  }
+  navigator.mediaDevices.getUserMedia({
+    audio: true, video:false
+  })
+  .then(function(stream){
+    recorder = new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp9'});
+    recorder.addEventListener('dataavailable',onRecordingReady)
+  })
 }
-
 function record_init() {
   
   recordButton = document.getElementById('record');
@@ -50,7 +49,25 @@ function record_init() {
     recorder.addEventListener('dataavailable', onRecordingReady);
   });
 };
+function click_disappear(){
+  record_btn = document.getElementById('record');
+  stop_btn = document.getElementById('stop');
+  record_text = document.getElementById("record_text");
+  stop_text = document.getElementById('stop_text');
+  if(record_btn.style.display =="none"){
+    record_btn.style.display = 'flex';
+    record_text.style.display = 'flex';
+    stop_btn.style.display = "none";
+    stop_text.style.display = "none";
+  }
+  else{
+    record_btn.style.display = 'none';
+    stop_btn.style.display = "flex";
+    record_text.style.display = 'none';
+    stop_text.style.display = "flex";
+  }
 
+}
 function startRecording() {
   recordButton.disabled = true;
   stopButton.disabled = false;
@@ -111,12 +128,53 @@ function getJSON(){
     return response.json();
   })
   .then(function(document1){
-    for(i = 0;i<33;i++){
+
+    for(i = 0;i<document1['selection'].length;i++){
       var logg = document.createElement("option");
       logg.textContent = document1['selection'][i]['opt'];
+      logg.value = document1['selection'][i]['opt'];
       target.appendChild(logg);
       //到時這邊加入想要介紹的內容
-      
       }
   })
+}
+function found(text,target){
+  for(i = 0;i<text['selection'].length;i++){
+    if(text['selection'][i]['opt'] == target){
+      return i;
+    }
+  }
+  return 0;
+}
+function changeModel(value){
+
+  target = document.getElementById('model_explain');
+  const js = fetch("/model_name")
+  .then(function(response){
+    return response.json();
+  }).then(function(document){
+    target.innerHTML = document['selection'][found(document,value)]['description'];
+  });
+}
+// 下載系統
+function saveTextAsFile(textToWrite, fileNameToSaveAs) {
+  var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'}); 
+  var downloadLink = document.createElement("a");
+  downloadLink.download = fileNameToSaveAs;
+  downloadLink.innerHTML = "Download File";
+  if (window.webkitURL != null) {
+  // Chrome allows the link to be clicked
+  // without actually adding it to the DOM.
+  downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+  }
+  else {
+  // Firefox requires the link to be added to the DOM
+  // before it can be clicked.
+  downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+  downloadLink.onclick = destroyClickedElement;
+  downloadLink.style.display = "none";
+  document.body.appendChild(downloadLink);
+  }
+  
+  downloadLink.click();
 }
