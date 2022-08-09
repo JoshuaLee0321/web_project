@@ -56,6 +56,7 @@ h1{
   padding: 15px;
   width:850px;
   float:right;
+
 }
 main{
   display:flex;
@@ -126,4 +127,23 @@ main{
 }
 #download_btn:hover{
   background-color: #495057;
+}
+/* unvisited link */
+a:link {
+  color: gray;
+}
+
+/* visited link */
+a:visited {
+  color: gainsboro;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: oldlace;
 }

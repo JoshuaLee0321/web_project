@@ -56,7 +56,7 @@ function click_disappear(){
   stop_text = document.getElementById('stop_text');
   if(record_btn.style.display =="none"){
     record_btn.style.display = 'flex';
-    record_text.style.display = 'flex';
+    record_text.style.display = '';
     stop_btn.style.display = "none";
     stop_text.style.display = "none";
   }
@@ -64,7 +64,7 @@ function click_disappear(){
     record_btn.style.display = 'none';
     stop_btn.style.display = "flex";
     record_text.style.display = 'none';
-    stop_text.style.display = "flex";
+    stop_text.style.display = "";
   }
 
 }
